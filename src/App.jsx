@@ -30,10 +30,15 @@ function App() {
     
   }
 
-  const deleteUser = (id) =>{
+  const deleteUser = (userId) =>{
     
-    setUsers(users.filter(user => user.id !== String(id)));
+    setUsers(users.filter((user) =>  user.id !== userId))
 
+
+  }
+
+  const editUser = (id, editedUser) =>{
+    setUsers(users.map((user) => user.id ===id ? editedUser : user))
   }
   
 
@@ -47,7 +52,7 @@ function App() {
             <UsersForm newUser={handleAddUser}/>
           </Col>
           <Col>
-            <Users usersJsx={users} deleteUser={deleteUser} />
+            <Users usersJsx={users} deleteUser={deleteUser} editUser={editUser}/>
           </Col>
         </Row>
       </Container>

@@ -9,14 +9,16 @@ class UsersForm extends Component {
       name: "",
       email: "",
       gen: "",
-      id: uuid(),
+      
     };
 
     this.userChange = (e) => {
       e.preventDefault();
       this.setState({
         [e.target.name]: e.target.value,
+        id: uuid(),
       });
+      
     };
 
     this.userSubmit = (e) => {
@@ -46,6 +48,7 @@ class UsersForm extends Component {
             placeholder="Enter name"
             name="name"
             onChange={this.userChange}
+            required 
           />
         </Form.Group>
 
@@ -57,6 +60,8 @@ class UsersForm extends Component {
             name="email"
             value={this.state.email}
             onChange={this.userChange}
+            required 
+
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -67,6 +72,7 @@ class UsersForm extends Component {
             name="gen"
             value={this.state.gen}
             onChange={this.userChange}
+            required 
           />
         </Form.Group>
 
