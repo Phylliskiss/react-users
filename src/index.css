@@ -1,10 +1,82 @@
 body{
   margin: 2rem;
+
+  /* From https://css.glass */
+background: rgba(175, 180, 247, 0.19);
+  color: rgba(0, 0, 139, 0.848);
+  font-size: large;
+
 }
 
 .myuser{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
- 
+  margin-top: 3rem; 
+}
+
+form{
+  margin-top: 2rem;
+  font-size: larger;
+
+}
+
+.card{
+  background-color: rgba(175, 180, 247, 0.19);
+}
+
+.userdetails{
+  color: rgb(10, 10, 10);
+}
+.usertitle{
+  color: rgba(0, 0, 139, 0.848);;
+  text-decoration: underline;
+}
+
+.input{
+/* From https://css.glass */
+background: rgba(8, 53, 175, 0.114);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+border: 1px solid rgba(175, 180, 247, 0.77);
+color:rgba(175, 180, 247, 0.244);
+width: 21rem;
+
+}
+
+
+.form-body{
+  margin-top: 5rem;
+  background: rgba(255, 255, 255, 0.244);
+  border: 1px solid rgba(247, 248, 250, 0.33);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+
+}
+
+.me-4{
+  background-color: rgba(13, 2, 93, 0.838);
+  border: 1px solid transparent;
+  padding-inline: 1.5rem;
+}
+
+.submitBtn{
+  background-color: rgb(13, 2, 93);
+  border: 1px solid transparent;
+ width: 21rem;
+ margin-top: 1.5rem;
+ font-size: large;
+
+}
+
+.deletebtn{
+  background-color: rgba(117, 2, 2, 0.934);
+  border: 1px solid transparent;
+  padding-inline: 1rem;
+
+}
+
+::placeholder{
+  color: rgb(207, 18, 18);
 }

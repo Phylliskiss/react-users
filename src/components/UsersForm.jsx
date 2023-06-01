@@ -9,7 +9,6 @@ class UsersForm extends Component {
       name: "",
       email: "",
       gen: "",
-      
     };
 
     this.userChange = (e) => {
@@ -18,68 +17,69 @@ class UsersForm extends Component {
         [e.target.name]: e.target.value,
         id: uuid(),
       });
-      
     };
 
     this.userSubmit = (e) => {
       e.preventDefault();
       // console.log(this.state);
       this.props.newUser(this.state);
-      
+
       this.setState({
         name: "",
         email: "",
         gen: "",
       });
     };
-
-   
-
   }
 
   render() {
     return (
-      <Form onSubmit={this.userSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            value={this.state.name}
-            placeholder="Enter name"
-            name="name"
-            onChange={this.userChange}
-            required 
-          />
-        </Form.Group>
+      <>
+      <h2> Personal Data Form</h2>
+        <Form onSubmit={this.userSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              className="input"
+              type="text"
+              value={this.state.name}
+              placeholder="Enter name"
+              name="name"
+              onChange={this.userChange}
+              required
+            />
+          </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            name="email"
-            value={this.state.email}
-            onChange={this.userChange}
-            required 
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+            className="input"
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={this.state.email}
+              onChange={this.userChange}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Gen</Form.Label>
+            <Form.Control
+            className="input"
+              type="text"
+              placeholder="enter gen"
+              name="gen"
+              value={this.state.gen}
+              onChange={this.userChange}
+              required
+            />
+          </Form.Group>
 
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Gen</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="enter gen"
-            name="gen"
-            value={this.state.gen}
-            onChange={this.userChange}
-            required 
-          />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+          <Button className="submitBtn"variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </>
     );
   }
 }

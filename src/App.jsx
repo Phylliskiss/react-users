@@ -45,14 +45,14 @@ function App() {
   //make a copy of something or an existing data with ...name of object, eg ...users
   //then add newUser to it with a comma ...users,newUser it won't work without it
   return (
-    <div>
+    <div className="form-body">
       <Container fluid>
         <Row>
           <Col>
-            <UsersForm newUser={handleAddUser}/>
+            <UsersForm title={'Personal Data'} newUser={handleAddUser} />
           </Col>
           <Col>
-            <Users usersJsx={users} deleteUser={deleteUser} editUser={editUser}/>
+            <Users title={'Users Data'} usersJsx={users} deleteUser={deleteUser} editUser={editUser}/>
           </Col>
         </Row>
       </Container>

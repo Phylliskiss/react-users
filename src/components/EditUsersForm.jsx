@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 
-const EditUsersForm = ({ prefil, editUser,handleClose }) => {
+const EditUsersForm = ({ prefil, editUser, handleClose }) => {
   const [users, setUsers] = useState({
     id: prefil.id,
     name: prefil.name,
@@ -19,11 +19,10 @@ const EditUsersForm = ({ prefil, editUser,handleClose }) => {
 
   const userEditSubmit = (e) => {
     e.preventDefault();
-    console.log("item saved");
-    editUser(users, users.id);
-    handleClose();
+    editUser(users.id, users);
+    handleClose(users);
+    console.log(users);
   };
-
 
   return (
     <div>
@@ -62,6 +61,9 @@ const EditUsersForm = ({ prefil, editUser,handleClose }) => {
             required
           />
         </Form.Group>
+        <Button variant="primary" type="submit" onClick={handleClose}>
+          Save changes
+        </Button>
       </Form>
     </div>
   );
